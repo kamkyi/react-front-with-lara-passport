@@ -7,6 +7,14 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Container from '@material-ui/core/Container';
+import Signin from './components/signin/Signin';
+import Signup from './components/signup/Signup';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -33,10 +41,14 @@ function App() {
               <Typography variant="h6" className={classes.title}>
                 News
               </Typography>
-              <Button color="inherit">Login</Button>
+              <Button color="inherit">Sign In</Button>
+              <Button color="inherit">Sign Up</Button>
             </Toolbar>
           </AppBar>
-          <Container fixed></Container>
+          <Container fixed>
+              <Signin></Signin>
+              <Signup></Signup>
+          </Container>
     </div>
   );
 }
