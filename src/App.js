@@ -81,7 +81,7 @@ export default function SimpleTabs() {
              <HomeIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-             Hotel Admin
+             Hotel API Admin
           </Typography>
           <Tabs value={value} onChange={handleChange} aria-label="Tabs with Navs">
             <Tab label="Home" {...a11yProps(0)} />
