@@ -94,7 +94,7 @@ export default function Signup() {
                 variant="outlined"
                 required
                 fullWidth
-                id="email"
+                id="email_signup"
                 label="Email Address"
                 name="email"
                 autoComplete="email"
@@ -108,7 +108,7 @@ export default function Signup() {
                 name="password"
                 label="Password"
                 type="password"
-                id="password"
+                id="password_signup"
                 autoComplete="current-password"
               />
             </Grid>

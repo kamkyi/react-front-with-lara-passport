@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import axios from 'axios';
 
 function Copyright() {
   return (
@@ -53,7 +54,13 @@ const useStyles = makeStyles(theme => ({
 
 function HandleSubmit(event) {
    event.preventDefault();
-   window.alert();
+   axios.get(`https://jsonplaceholder.typicode.com/users`)
+   .then(res => {
+     console.log(res.data);
+     window.alert(res.data);
+    //  const persons = res.data;
+    //  this.setState({ persons });
+   })
 }
 function TypeHandler(event)
 {
@@ -78,7 +85,7 @@ export default function Signin() {
             margin="normal"
             required
             fullWidth
-            id="email"
+            id="email_signin"
             label="Email Address"
             name="email"
             autoComplete="email"
@@ -90,7 +97,7 @@ export default function Signin() {
             margin="normal"
             required
             fullWidth
-            name="password"
+            name="password_signin"
             label="Password"
             type="password"
             id="password"

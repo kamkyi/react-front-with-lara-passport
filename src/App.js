@@ -80,8 +80,8 @@ export default function SimpleTabs() {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
              <HomeIcon />
           </IconButton>
-          <Typography variant="h7" className={classes.title}>
-             Hotel API Admin
+          <Typography variant="h6" className={classes.title}>
+             Hotel Admin
           </Typography>
           <Tabs value={value} onChange={handleChange} aria-label="Tabs with Navs">
             <Tab label="Home" {...a11yProps(0)} />
