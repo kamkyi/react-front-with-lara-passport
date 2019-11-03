@@ -51,6 +51,14 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+function HandleSubmit(event) {
+   event.preventDefault();
+   window.alert();
+}
+function TypeHandler(event)
+{
+    window.alert(event.target.value);
+}
 export default function Signin() {
   const classes = useStyles();
 
@@ -64,7 +72,7 @@ export default function Signin() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={HandleSubmit}>
           <TextField
             variant="outlined"
             margin="normal"
@@ -75,6 +83,7 @@ export default function Signin() {
             name="email"
             autoComplete="email"
             autoFocus
+            onChange={TypeHandler}
           />
           <TextField
             variant="outlined"

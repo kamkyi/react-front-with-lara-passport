@@ -1,5 +1,7 @@
 const initialState = {
-       counter :0
+       counter :0,
+       username : '',
+       password : ''
 }
 const reducer = (state = initialState, action ) =>{
        if(action.type === 'INCRE')
@@ -7,6 +9,9 @@ const reducer = (state = initialState, action ) =>{
               return {
                      counter:state.counter+2
               }
+       }else if(action.type === 'LOGIN')
+       {
+            
        }
        return state;
 }
