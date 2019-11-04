@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useState ,useEffect } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,8 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import axios from 'axios';
-
+import { connect } from 'react-redux';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -52,22 +51,41 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+function emailHandle()
+{
+
+}
+
+function passwordHandle(e)
+{   
+    window.alert();
+}
+
 function HandleSubmit(event) {
    event.preventDefault();
-   axios.get(`https://jsonplaceholder.typicode.com/users`)
-   .then(res => {
-     console.log(res.data);
-     window.alert(res.data);
-    //  const persons = res.data;
-    //  this.setState({ persons });
-   })
+  //  axios.get(`https://jsonplaceholder.typicode.com/users`)
+  //  .then(res => {
+  //    console.log(res.data);
+  //    window.alert(res.data);
+  //   //  const persons = res.data;
+  //   //  this.setState({ persons });
+  //  })
 }
 function TypeHandler(event)
 {
     window.alert(event.target.value);
 }
-export default function Signin() {
+ function Signin() {
   const classes = useStyles();
+
+  const [email,setEmail] = useState(null);
+  const [password,setPassword] = useState(null);
+  const [count,setCount] = useState(0);
+
+  useEffect(()=>{
+         // window.alert(count);
+  });
+
 
   return (
     <Container component="main" maxWidth="xs">
@@ -102,6 +120,7 @@ export default function Signin() {
             type="password"
             id="password"
             autoComplete="current-password"
+            onChange ={()=>{ setCount(count+1)}}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
@@ -136,3 +155,4 @@ export default function Signin() {
     </Container>
   );
 }
+export default Signin;
