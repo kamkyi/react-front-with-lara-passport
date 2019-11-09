@@ -11,7 +11,7 @@ import Signup from './components/signup/Signup';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import SvgIcon from '@material-ui/core/SvgIcon';
-import Tester from './components/tester/Tester';
+import Home from './components/home/Home';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -91,7 +91,7 @@ export default function SimpleTabs() {
         </Toolbar>
       </AppBar>
       <TabPanel value={value} index={0}>
-           <Tester/>
+           <Home />
       </TabPanel>
       <TabPanel value={value} index={1}>
             <Signin/>
